@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bs0-WW-Rny">
+                                <rect key="frame" x="20" y="84" width="374" height="80"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="pMZ-Ci-Zzj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="In3-yO-IxQ">
+                                <rect key="frame" x="20" y="204" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="qRn-31-k06"/>
+                                    <constraint firstAttribute="height" constant="50" id="rUy-1d-b0l"/>
+                                </constraints>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZsX-LU-U2z"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lS-xm-OYg">
+                                <rect key="frame" x="120" y="204" width="274" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IXq-Nh-D4l"/>
+                                </connections>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V9T-DZ-iag">
+                                <rect key="frame" x="20" y="274" width="374" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dhN-sr-Zea">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yIJ-Qs-mCL">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U8w-Qm-4JT">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zaX-RI-rKp">
+                                <rect key="frame" x="20" y="274" width="374" height="488"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jxv-gs-z5e"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QC8-DL-A8i"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1lS-xm-OYg" firstAttribute="top" secondItem="In3-yO-IxQ" secondAttribute="top" id="7Qh-H0-H48"/>
+                            <constraint firstItem="1lS-xm-OYg" firstAttribute="leading" secondItem="In3-yO-IxQ" secondAttribute="trailing" constant="20" id="84a-43-MC1"/>
+                            <constraint firstItem="V9T-DZ-iag" firstAttribute="top" secondItem="In3-yO-IxQ" secondAttribute="bottom" constant="20" id="KeT-eZ-vZw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zaX-RI-rKp" secondAttribute="trailing" constant="20" id="MCM-6l-obj"/>
+                            <constraint firstItem="zaX-RI-rKp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Nbo-L0-czr"/>
+                            <constraint firstItem="zaX-RI-rKp" firstAttribute="top" secondItem="In3-yO-IxQ" secondAttribute="bottom" constant="20" id="Rhb-bm-HOL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bs0-WW-Rny" secondAttribute="trailing" constant="20" id="SYI-i3-I3d"/>
+                            <constraint firstItem="1lS-xm-OYg" firstAttribute="bottom" secondItem="In3-yO-IxQ" secondAttribute="bottom" id="T99-OG-pKM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1lS-xm-OYg" secondAttribute="trailing" constant="20" id="TzC-9W-94h"/>
+                            <constraint firstItem="bs0-WW-Rny" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="VUu-yh-8li"/>
+                            <constraint firstItem="In3-yO-IxQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZMl-0m-9dD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zaX-RI-rKp" secondAttribute="bottom" constant="100" id="bBH-MZ-qvn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V9T-DZ-iag" secondAttribute="trailing" constant="20" id="jkZ-i6-3GY"/>
+                            <constraint firstItem="V9T-DZ-iag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mqI-5T-mtZ"/>
+                            <constraint firstItem="In3-yO-IxQ" firstAttribute="top" secondItem="bs0-WW-Rny" secondAttribute="bottom" constant="40" id="oQZ-zg-oXU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V9T-DZ-iag" secondAttribute="bottom" constant="20" id="uCU-fI-FRL"/>
+                            <constraint firstItem="bs0-WW-Rny" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yD2-bb-nKH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="bs0-WW-Rny" id="AuE-5M-hdO"/>
+                        <outlet property="collectionView" destination="V9T-DZ-iag" id="Y0p-xV-LHF"/>
+                        <outlet property="currencyField" destination="1lS-xm-OYg" id="yRR-iu-Oyk"/>
+                        <outlet property="pickerView" destination="zaX-RI-rKp" id="2LM-aR-AuY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+</document>

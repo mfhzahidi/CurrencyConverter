@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CurrencyValueCollectionViewCell" customModule="CurrencyConverter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="151" height="105"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="151" height="105"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dr-MH-NUb">
+                        <rect key="frame" x="10" y="10" width="131" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="fKV-sW-HhJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsN-bD-8oO">
+                        <rect key="frame" x="10" y="75" width="131" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="HQX-ub-0xm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bsN-bD-8oO" secondAttribute="trailing" constant="10" id="FVP-5z-oS6"/>
+                <constraint firstAttribute="trailing" secondItem="8Dr-MH-NUb" secondAttribute="trailing" constant="10" id="Gil-Da-XiB"/>
+                <constraint firstAttribute="bottom" secondItem="bsN-bD-8oO" secondAttribute="bottom" constant="10" id="ZGf-Cv-Tqf"/>
+                <constraint firstItem="bsN-bD-8oO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ZNR-jr-VKm"/>
+                <constraint firstItem="8Dr-MH-NUb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="jd2-v6-aMS"/>
+                <constraint firstItem="8Dr-MH-NUb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="n7W-cj-kzA"/>
+                <constraint firstItem="bsN-bD-8oO" firstAttribute="top" secondItem="8Dr-MH-NUb" secondAttribute="bottom" constant="5" id="vJe-p5-HQ9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="151" height="64"/>
+            <connections>
+                <outlet property="currencyName" destination="8Dr-MH-NUb" id="9pB-X7-hNR"/>
+                <outlet property="currencyValue" destination="bsN-bD-8oO" id="CdK-hr-7Tp"/>
+            </connections>
+            <point key="canvasLocation" x="58.695652173913047" y="115.17857142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
